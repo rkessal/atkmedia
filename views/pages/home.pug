@@ -1,0 +1,65 @@
+extends ../base.pug
+
+block variables 
+  - var template = 'home'
+
+block content
+  .home
+    each section in document.data.body
+
+      if section.slice_type == 'hero'
+        .home__hero
+          figure.home__hero__background
+            img.home__hero__background__img(alt=section.primary.background_img.alt, src=section.primary.background_img.url)
+          .home__hero__wrapper
+            h1.home__hero__quote=section.primary.quote
+            .home__hero__secondary
+              span.home__hero__secondary__quote=section.primary.secondary
+              .home__hero__secondary__icon
+                svg(width="38" height="63" viewBox="0 0 38 63" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  rect(x="17" width="4" height="63" fill="white")
+                  path(d="M19 63C19 56.6667 15.4 43.2 1 40" stroke="white" stroke-width="4")
+                  path(d="M19 63C19 56.6667 22.6 43.2 37 40" stroke="white" stroke-width="4")
+
+      if section.slice_type == 'quote'
+        .home__quote
+          .home__quote__wrapper
+            .home__quote__text=section.primary.quote
+
+      if section.slice_type == 'section_default'
+        .home__section__default
+          .home__section__default__wrapper
+            .home__section__default__left
+              .home__section__default__left__number='0' + section.primary.number
+              .home__section__default__left__title!=section.primary.title.replace(/\n/g, '<br/>')
+            .home__section__default__right
+              .home__section__default__right__text!=(PrismicDOM.asHTML(section.primary.content))
+
+      if section.slice_type == 'vertical'
+        .home__section__vertical
+          .home__section__vertical__wrapper
+            .home__section__vertical__left
+              .home__section__vertical__left__number='0' + section.primary.number
+              .home__section__vertical__left__title=section.primary.title
+            .home__section__vertical__right
+              each item in section.items
+                .home__section__vertical__right_item
+                  .home__section__vertical__right__title=item.vertical_title
+                  .home__section__vertical__right__content!=(PrismicDOM.asHTML(item.vertical_content))
+
+      if section.slice_type == 'horizontal'
+        .home__section__horizontal
+          .home__section__horizontal__wrapper
+            .home__section__horizontal__left
+              .home__section__horizontal__left__number='0' + section.primary.number
+              .home__section__horizontal__left__title=section.primary.title
+            .home__section__horizontal__right
+              each item in section.items
+                .home__section__horizontal__right_item
+                  .home__section__horizontal__right__item__left__title=item.horizontal_title
+                  .home__section__horizontal__right__item__right__content!=(PrismicDOM.asHTML(item.horizontal_content))
+
+      if section.slice_type == 'call_to_action'
+        .home__section__cta
+          .home__section__cta__wrapper
+            a.home_section__cta__link(href=section.primary.link.url)=section.primary.label

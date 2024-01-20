@@ -1,0 +1,11 @@
+html {
+  font-size: calc(100vw / 1400 * 16);
+
+  @include media('<=phone') {
+    font-size: calc(100vw / 768 * 16);
+  }
+}
+body {
+  @extend %paragraph-11;
+  background-color: $color-cornflower-blue;
+}

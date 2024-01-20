@@ -1,0 +1,72 @@
+.navigation  {
+  position: relative;
+}
+
+.navigation__wrapper  {
+  display: flex;
+  padding-top: 2rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+  color: $color-white;
+  position: absolute;
+  max-width: 85rem;
+  width: 100%;
+  height: 4rem;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  @include media('<=phone') {
+    max-width: 45rem;
+  }
+}
+
+.navigation__logo {
+  width: 4.0625rem;
+  height: 2.38869rem;
+}
+
+.navigation__logo__img {
+  height: 100%;
+  width: 100%;
+}
+    
+.navigation__menu {
+  display: none;
+}
+
+.navigation__menu__icon {
+  svg {
+    width: 1.75781rem;
+    height: 1.5625rem;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.navigation__menu__wrapper {
+  
+}
+
+.navigation__menu__copyright {
+  
+}
+
+.navigation__list__internal {
+  
+}
+
+.navigation__list__internal__item {
+  
+}
+
+.navigation__list__external {
+  
+}
+
+.navigation__list__external__item {
+  
+}

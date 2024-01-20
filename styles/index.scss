@@ -1,0 +1,25 @@
+@import 'base/reset';
+
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/responsive';
+
+@import 'base/base';
+@import 'base/fonts';
+
+@import 'shared/paragraphs';
+@import 'shared/titles';
+@import 'shared/ctas';
+
+@import 'layouts/footer';
+@import 'layouts/navigation';
+@import 'layouts/preloader';
+
+
+@import 'pages/home/home';
+@import 'pages/home/hero';
+@import 'pages/home/quote';
+@import 'pages/home/section_default';
+@import 'pages/home/section_horizontal';
+@import 'pages/home/section_vertical';
+

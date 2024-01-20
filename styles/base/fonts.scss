@@ -1,0 +1,215 @@
+@font-face {
+  font-family: $font-freight;
+  src: url('/fonts/freightdispprolight-regular.woff2') format('woff2'),
+      url('/fonts/freightdispprolight-regular.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-freight;
+  src: url('/fonts/freightdispproblack-regular.woff2') format('woff2'),
+      url('/fonts/freightdispproblack-regular.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-freight;
+  src: url('/fonts/freightdispproblack-italic.woff2') format('woff2'),
+      url('/fonts/freightdispproblack-italic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-freight;
+  src: url('/fonts/freightdispprobook-italic.woff2') format('woff2'),
+      url('/fonts/freightdispprobook-italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-freight;
+  src: url('/fonts/freightdispprobold-regular.woff2') format('woff2'),
+      url('/fonts/freightdispprobold-regular.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-freight;
+  src: url('/fonts/freightdispprolight-italic.woff2') format('woff2'),
+      url('/fonts/freightdispprolight-italic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-freight;
+  src: url('/fonts/freightdisppromedium-regular.woff2') format('woff2'),
+      url('/fonts/freightdisppromedium-regular.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-freight;
+  src: url('/fonts/freightdispprobook-regular.woff2') format('woff2'),
+      url('/fonts/freightdispprobook-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-freight;
+  src: url('/fonts/freightdispprobold-italic.woff2') format('woff2'),
+      url('/fonts/freightdispprobold-italic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-freight;
+  src: url('/fonts/freightdisppromedium-italic.woff2') format('woff2'),
+      url('/fonts/freightdisppromedium-italic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-freight;
+  src: url('/fonts/freightdispprosemibold-italic.woff2') format('woff2'),
+      url('/fonts/freightdispprosemibold-italic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-freight;
+  src: url('/fonts/freightdispprosemibold-regular.woff2') format('woff2'),
+      url('/fonts/freightdispprosemibold-regular.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-forma-djr;
+  src: url('/fonts/formadjrdisplay-lightitalic.woff2') format('woff2'),
+      url('/fonts/formadjrdisplay-lightitalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-forma-djr;
+  src: url('/fonts/formadjrdisplay-regular.woff2') format('woff2'),
+      url('/fonts/formadjrdisplay-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-forma-djr;
+  src: url('/fonts/formadjrdisplay-light.woff2') format('woff2'),
+      url('/fonts/formadjrdisplay-light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-forma-djr;
+  src: url('/fonts/formadjrdisplay-italic.woff2') format('woff2'),
+      url('/fonts/formadjrdisplay-italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'forma djr display extra';
+  src: url('/fonts/formadjrdisplay-extrabolditalic.woff2') format('woff2'),
+      url('/fonts/formadjrdisplay-extrabolditalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-forma-djr;
+  src: url('/fonts/formadjrdisplay-bolditalic.woff2') format('woff2'),
+      url('/fonts/formadjrdisplay-bolditalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-forma-djr;
+  src: url('/fonts/formadjrdisplay-medium.woff2') format('woff2'),
+      url('/fonts/formadjrdisplay-medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-forma-djr;
+  src: url('/fonts/formadjrdisplay-mediumitalic.woff2') format('woff2'),
+      url('/fonts/formadjrdisplay-mediumitalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-forma-djr;
+  src: url('/fonts/formadjrdisplay-bold.woff2') format('woff2'),
+      url('/fonts/formadjrdisplay-bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-forma-djr;
+  src: url('/fonts/formadjrdisplay-black.woff2') format('woff2'),
+      url('/fonts/formadjrdisplay-black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'forma djr display extra';
+  src: url('/fonts/formadjrdisplay-extrabold.woff2') format('woff2'),
+      url('/fonts/formadjrdisplay-extrabold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-forma-djr;
+  src: url('/fonts/formadjrdisplay-blackitalic.woff2') format('woff2'),
+      url('/fonts/formadjrdisplay-blackitalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}

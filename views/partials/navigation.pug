@@ -1,0 +1,23 @@
+nav.navigation 
+  .navigation__wrapper 
+    figure.navigation__logo
+      img.navigation__logo__img(alt=navigation.data.logo.alt src=navigation.data.logo.url)
+    
+    .navigation__menu__icon
+      svg(width="29" height="26" viewBox="0 0 29 26" fill="none" xmlns="http://www.w3.org/2000/svg")
+        rect(x="29" y="0.609528" width="3.75" height="28.125" transform="rotate(90 29 0.609528)" fill="white")
+        rect(x="0.875" y="14.9845" width="3.75" height="28.125" transform="rotate(-90 0.875 14.9845)" fill="white")
+        rect(x="29" y="21.8595" width="3.75" height="28.125" transform="rotate(90 29 21.8595)" fill="white")
+
+      .navigation__menu
+        .navigation__menu__wrapper
+          span.navigation__menu__copyright=navigation.data.copyright
+          each link in navigation.data.body
+            if link.slice_type == 'navigation_link'
+              ul.navigation__list__internal
+                each item in link.items
+                  li.navigation__list__internal__item(href='item.link')=item.label
+            if link.slice_type == 'external_link'
+              ul.navigation__list__external
+                each item in link.items
+                  li.navigation__list__external__item(href='item.link')=item.label

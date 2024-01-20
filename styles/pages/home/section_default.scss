@@ -1,0 +1,42 @@
+.home__section__default {
+  @extend %center;
+  margin-bottom: 22rem;
+}
+
+.home__section__default__wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 70.625rem;
+
+  @include media('<=phone') {
+    max-width: 45rem;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.home__section__default__left {
+  max-width: 19.25rem;
+
+  @include media('<=phone') {
+    margin-bottom: 6rem 
+  }
+}
+
+.home__section__default__left__number {
+  @extend %paragraph-12;
+}
+
+.home__section__default__left__title {
+  @extend %title-36;
+}
+
+.home__section__default__right {
+  max-width: 34.6875rem;
+}
+
+.home__section__default__right__text {
+
+}

@@ -1,0 +1,16 @@
+.home__quote {
+}
+
+.home__quote__wrapper {
+  @extend %title-41;
+  max-width: 49.0625rem;
+  margin: 11rem auto;
+
+  @include media('<=phone') {
+    max-width: 44.5rem;
+  }
+}
+
+.home__quote__text {
+  // @mixin %title
+}
