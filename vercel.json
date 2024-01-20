@@ -1,7 +1,10 @@
 {
   "version": 2,
-  "buildCommand": "next build",
   "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build"
+    },
     {
       "src": "app.js",
       "use": "@vercel/node"
