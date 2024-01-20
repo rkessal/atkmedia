@@ -8,7 +8,10 @@
     "backend:dev": "nodemon app.js",
     "frontend:build": "webpack --progress --config webpack.config.build.js",
     "frontend:dev": "webpack serve --progress --config webpack.config.development.js",
-    "start": "npm run frontend:dev & npm run backend:dev"
+    "start": "npm run frontend:dev & npm run backend:dev",
+    "build": "webpack build --config webpack.config.build.js",
+    "lint": "eslint *.js"
+
   },
   "keywords": [],
   "author": "",
