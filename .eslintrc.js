@@ -6,5 +6,8 @@ module.exports = {
   },
   parserOptions: {
     emacVersion: 2020
+  },
+  rules: {
+    'no-new': 0
   }
 }

@@ -1,8 +1,20 @@
-.preoloader  {
-  display: none;
+.preloader  {
+  @extend %center;
+  @extend %cover;
+  background-color: $color-cornflower-blue;
 }
 
 .preloader__text {
+  font-size: 0;
+  span {
+    display: inline-block;
+    overflow: hidden;
+
+    span {
+      @extend %title-41;
+      vertical-align: top;
+    }
+  }
 
 }
 

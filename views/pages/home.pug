@@ -8,9 +8,9 @@ block content
     each section in document.data.body
 
       if section.slice_type == 'hero'
-        .home__hero
+        .home__hero#hero
           figure.home__hero__background
-            img.home__hero__background__img(alt=section.primary.background_img.alt, src=section.primary.background_img.url)
+            img.home__hero__background__img(alt=section.primary.background_img.alt, data-src=section.primary.background_img.url)
           .home__hero__wrapper
             h1.home__hero__quote=section.primary.quote
             .home__hero__secondary
@@ -27,7 +27,7 @@ block content
             .home__quote__text=section.primary.quote
 
       if section.slice_type == 'section_default'
-        .home__section__default
+        .home__section__default#quem-somos
           .home__section__default__wrapper
             .home__section__default__left
               .home__section__default__left__number='0' + section.primary.number
@@ -36,7 +36,7 @@ block content
               .home__section__default__right__text!=(PrismicDOM.asHTML(section.primary.content))
 
       if section.slice_type == 'vertical'
-        .home__section__vertical
+        .home__section__vertical#valores
           .home__section__vertical__wrapper
             .home__section__vertical__left
               .home__section__vertical__left__number='0' + section.primary.number
@@ -48,7 +48,7 @@ block content
                   .home__section__vertical__right__content!=(PrismicDOM.asHTML(item.vertical_content))
 
       if section.slice_type == 'horizontal'
-        .home__section__horizontal
+        .home__section__horizontal#servicios
           .home__section__horizontal__wrapper
             .home__section__horizontal__left
               .home__section__horizontal__left__number='0' + section.primary.number

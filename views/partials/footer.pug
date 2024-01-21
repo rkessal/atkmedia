@@ -1,10 +1,10 @@
 footer.footer
   figure.footer__background
-    img.footer__background__img(src=footer.data.background_image.url alt=footer.data.background_image.alt)
+    img.footer__background__img(data-src=footer.data.background_image.url alt=footer.data.background_image.alt)
   .footer__wrapper
     .footer__top
       figure.footer__logo
-        img.footer__logo__img(alt=footer.data.logo.alt src=footer.data.logo.url)
+        img.footer__logo__img(alt=footer.data.logo.alt data-src=footer.data.logo.url)
       each section in footer.data.body
         if section.slice_type == 'column_link'
           ul.footer__column__links
@@ -18,6 +18,6 @@ footer.footer
           ul.footer__bottom__links
             each item in section.items
               li.footer__bottom__links__item
-                a.footer__bottom__links__item__link(href=item.link.url)=item.label
+                a.footer__bottom__links__item__link(data-router href=item.link.url)=item.label
         if section.slice_type == 'copyright'
           .footer__bottom__copyright=section.primary.copyright

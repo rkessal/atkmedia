@@ -1,7 +1,8 @@
 nav.navigation 
   .navigation__wrapper 
-    figure.navigation__logo
-      img.navigation__logo__img(alt=navigation.data.logo.alt src=navigation.data.logo.url)
+    a(data-router href='/' alt='home')
+      figure.navigation__logo
+        img.navigation__logo__img(alt=navigation.data.logo.alt data-src=navigation.data.logo.url)
     
     .navigation__menu__icon
       svg(width="29" height="26" viewBox="0 0 29 26" fill="none" xmlns="http://www.w3.org/2000/svg")
