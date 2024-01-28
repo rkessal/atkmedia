@@ -1,11 +1,42 @@
-.preoloader  {
-  display: none;
+.preloader  {
+  @extend %center;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 20;
+  background-color: $color-cornflower-blue;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+  @include media('<=phone') {
+    height: 70rem;
+  }
 }
 
 .preloader__text {
+  @extend %title-36;
+  max-width: 49.0625rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  margin-left: 17.06rem;
 
+  span {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+  }
+
+  @include media('<=phone') {
+    margin-left: 3rem;
+    max-width: 40rem;
+  }
 }
 
 .preloader__number {
-
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  margin-bottom: 2rem;
+  transform: translateX(-50%);
 }

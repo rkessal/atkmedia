@@ -11,6 +11,6 @@
 
 .home_section__cta__link {
   @extend %title-36;
+  @extend %link;
   color: $color-port-gore;
-  text-decoration: underline;
 }
