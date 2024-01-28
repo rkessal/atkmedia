@@ -1,24 +1,47 @@
 import { each, get } from 'lodash'
 import { Home, Privacidade, Cdc } from './pages'
-import { Preloader } from './components'
+import { Preloader, Navigation } from './components'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Lenis from '@studio-freight/lenis'
+
+gsap.registerPlugin(ScrollTrigger)
 
 class App {
   constructor () {
-    // this.createPreloader()
     this.createContent()
+
+    this.createPreloader()
     this.createPages()
+    this.createNavigation()
     this.createRouter()
+    this.createSmoothScroll()
+  }
+
+  createSmoothScroll () {
+    const lenis = new Lenis()
+
+    lenis.on('scroll', ScrollTrigger.update)
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000)
+    })
+
+    gsap.ticker.lagSmoothing(0)
+  }
+
+  createNavigation () {
+    this.navigation = new Navigation()
   }
 
   createPreloader () {
     this.preloader = new Preloader()
-    this.preloader.once('completed', _ => this.onPreloaded())
+    this.preloader.on('completed', _ => this.onPreloaded())
   }
 
   createContent () {
     this.content = document.querySelector('.content')
     this.template = this.content.getAttribute('data-template')
-    console.log(this.content, this.template)
   }
 
   createPages () {
@@ -44,7 +67,16 @@ class App {
   }
 
   onPreloaded () {
+    this.onResize()
     this.preloader.destroy()
+  }
+
+  onResize () {
+    this.resizeId = window.requestAnimationFrame(_ => {
+      if (this.page) {
+        this.page.onResize()
+      }
+    })
   }
 
   async onRouterClick (event) {
@@ -56,6 +88,10 @@ class App {
     if (request.status !== 200) return
     window.history.pushState(null, null, href)
 
+    await this.page.hide()
+    this.page.destroy()
+    this.removeEventListeners()
+
     const div = document.createElement('div')
     div.innerHTML = await request.text()
 
@@ -65,12 +101,19 @@ class App {
     this.content.setAttribute('data-template', this.template)
     this.content.innerHTML = content.innerHTML
 
-    await this.page.hide()
+    window.scrollTo(0, 0)
     this.page = this.pages[this.template]
     this.page.create()
     this.page.show()
 
     this.createRouter()
+    this.onResize()
+
+    this.preloader.createLoader()
+  }
+
+  removeEventListeners () {
+    window.cancelAnimationFrame(this.resizeId)
   }
 }
 

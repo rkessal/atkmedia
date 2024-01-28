@@ -1,5 +1,8 @@
 .navigation  {
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
 }
 
 .navigation__wrapper  {
@@ -34,7 +37,13 @@
 }
     
 .navigation__menu {
-  display: none;
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color-port-gore;
 }
 
 .navigation__menu__icon {
@@ -42,31 +51,89 @@
     width: 1.75781rem;
     height: 1.5625rem;
   }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+.navigation__menu__close__icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 2rem;
+  margin-right: 2rem;
+
+  svg {
+    width: 3.4375rem;
+    height: 3.4375rem;
+  }
+
   &:hover {
     cursor: pointer;
   }
 }
 
 .navigation__menu__wrapper {
+  color: $color-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  top: 0;
   
+  li {
+    overflow: hidden;
+
+    a {
+      display: inline-block;
+    }
+  }
+
 }
 
 .navigation__menu__copyright {
-  
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-right: 2rem;
+  transform-origin: bottom right;
+  margin-bottom: auto;
+  transform: rotate(-90deg) translateX(50%);
 }
 
 .navigation__list__internal {
-  
+  @extend %title-36;
+  margin-bottom: 10rem;
+  margin-left: 24rem;
+
+  a {
+    @extend %link
+  }
+
+  @include media('<=phone') {
+    margin-left: 4rem;
+  }
 }
 
 .navigation__list__internal__item {
-  
+  &:not(:last-child) {
+    margin-bottom: 2.25rem;
+  } 
 }
 
 .navigation__list__external {
-  
+  @extend %title-23;
+  display: flex;
+  margin-left: 24rem;
+
+  @include media('<=phone') {
+    margin-left: 4rem;
+  }
 }
 
 .navigation__list__external__item {
+  &:not(:last-child) {
+    margin-right: 3.5rem
+  }
   
 }

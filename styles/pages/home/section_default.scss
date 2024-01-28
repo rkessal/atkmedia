@@ -1,6 +1,7 @@
 .home__section__default {
   @extend %center;
   margin-bottom: 22rem;
+  position: relative;
 }
 
 .home__section__default__wrapper {
@@ -8,6 +9,7 @@
   justify-content: space-between;
   max-width: 70.625rem;
   flex: 1;
+  align-items: flex-start;
 
   @include media('<=phone') {
     max-width: 45rem;
@@ -18,19 +20,25 @@
 }
 
 .home__section__default__left {
-  max-width: 19.25rem;
+  transform-origin: '0 0';
+  position: sticky;
+  top: 10%;
 
   @include media('<=phone') {
-    margin-bottom: 6rem 
+    margin-bottom: 6rem;
+    position: relative
   }
 }
 
 .home__section__default__left__number {
   @extend %paragraph-12;
+  display: inline-block;
 }
 
 .home__section__default__left__title {
   @extend %title-36;
+  max-width: 19.25rem;
+
 }
 
 .home__section__default__right {

@@ -1,0 +1,46 @@
+
+.privacidade {
+  display: flex;
+  justify-content: center;
+}
+
+.privacidade__wrapper {
+  margin-top: 10rem; 
+  max-width: 70.625rem;
+  width: 100%;
+}
+
+.privacidade__title {
+  @extend %title-41;
+  text-transform: lowercase;
+  margin-bottom: 10rem;
+}
+
+.privacidade__description {
+  @extend %paragraph-16;
+  max-width: 49.0625rem;
+  margin-bottom: 28rem;
+}
+
+.privacidade__section {
+  margin-bottom: 18rem;
+}
+
+.privacidade__section__wrapper {
+  max-width: 49.0625rem;
+}
+
+.privacidade__section__title {
+  @extend %title-36;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+}
+
+.privacidade__section__content {
+  margin-inline: auto;
+}
+
+      
+.privacidade__note {
+
+}

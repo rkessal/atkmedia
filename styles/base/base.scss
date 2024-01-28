@@ -8,4 +8,26 @@ html {
 body {
   @extend %paragraph-11;
   background-color: $color-cornflower-blue;
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+[data-animation="horizontal_label"],
+[data-animation="title"],
+[data-animation="paragraph"] {
+  p span, span {
+    display: inline-block;
+    overflow: hidden;
+
+    // overflow fix
+    padding-bottom: 0.5ch;
+    margin-bottom: -0.7ch;
+    padding-top: 0.4ch;
+    margin-top: -0.7ch;
+  }
 }

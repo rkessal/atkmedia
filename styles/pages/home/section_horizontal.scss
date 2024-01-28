@@ -1,22 +1,63 @@
 .home__section__horizontal {
   @extend %center;
+  width: 100%;
   margin-bottom: 22rem;
 }
 
 .home__section__horizontal__wrapper {
+  display: flex;
   max-width: 70.625rem;
-  flex: 1;
-
+  width: 100%;
+  align-items: start;
   @include media('<=phone') {
     max-width: 45rem;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
 .home__section__horizontal__left {
-  flex: 1;
+  max-width: 34.6875rem;
+  width: 100%;
+  position: sticky;
+  min-height: 5rem;
+  top: 10%;
+  margin-bottom: 50rem;
+
   @include media('<=phone') {
+    position: relative;
     text-align: center;
+    margin-bottom: 6rem;
+  }
+}
+
+.home__section__horizontal__left__labels {
+  @extend %title-35;
+  position: relative;
+  margin-top: 8rem;
+  margin-left: 7.31rem;
+  max-width: 22.625rem;
+
+  @include media('<=phone') {
+    display: none;
+  }
+
+}
+
+.home__section__horizontal__left__labels__item {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  &:first-child {
+    opacity: 2;
+  }
+
+  @include media('<=phone') {
+    display: none;
+    max-width: 44.5rem;
+    height: 100%;
+    display: block;
   }
 }
 
@@ -26,7 +67,6 @@
 
 .home__section__horizontal__left__title {
   @extend %title-36;
-  margin-bottom: 6rem;
 }
 
 .home__section__horizontal__right {
@@ -38,20 +78,48 @@
 
 .home__section__horizontal__right_item {
   display: flex;
-  justify-content: space-between;
   align-content: start;
+  min-height: 50rem;
 
-  &:not(:last-child) {
-    margin-bottom: 6rem;
+  &:first-child {
+    margin-top: 15rem;
+  }
+
+  @include media('<=phone') {
+    min-height: auto;
+    flex-direction: column;
+    margin-bottom: 4rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 }
 
-.home__section__horizontal__right__item__left__title {
+// .home__section__horizontal__right__item__left__title {
+//   @extend %title-35;
+//   max-width: 22.625rem;
+//   flex: 1;
+//   transform-origin: center;
+
+//   span {
+//     overflow: hidden;
+//     display: inline-block;
+//     line-height: 5rem;
+//   }
+// }
+
+.home__section__horizontal__right__item__title {
   @extend %title-35;
-  max-width: 22.625rem;
-  flex: 1;
+  display: none;
+
+  @include media('<=phone') {
+    display: block;
+    margin-bottom: 2rem;
+  }
 }
 
-.home__section__horizontal__right__item__right__content {
+.home__section__horizontal__right__item__content {
   max-width: 27.5rem;
 }
+

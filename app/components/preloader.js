@@ -2,31 +2,26 @@ import Component from 'classes/Component'
 import gsap from 'gsap'
 import { each } from 'lodash'
 import { split } from 'utils/text'
+import { calculate } from '../utils/text'
 
 export default class Preloader extends Component {
   constructor () {
     super({
       element: '.preloader',
       elements: {
-        body: document.querySelector('body'),
-        wrapper: '.preloader__wrapper',
         title: '.preloader__text',
         number: '.preloader__number',
-        images: document.querySelectorAll('img')
+        images: document.querySelectorAll('img'),
+        body: document.querySelector('body'),
+        html: document.querySelector('html')
       }
     })
 
-    split({
-      element: this.elements.title,
-      expression: '<br>'
-    })
-
-    split({
-      element: this.elements.title,
-      expression: '<br>'
-    })
+    split({ element: this.elements.title })
+    split({ element: this.elements.title })
 
     this.elements.titleSpans = this.elements.title.querySelectorAll('span span')
+    this.elements.lines = calculate(this.elements.titleSpans)
 
     this.count = 0
     this.createLoader()
@@ -50,14 +45,18 @@ export default class Preloader extends Component {
 
   onLoaded () {
     this.animateOut = gsap.timeline({
-      delay: 2
+      delay: 1
     })
 
     this.animateOut.to(this.elements.titleSpans, {
       duration: 1.5,
       ease: 'expo.out',
-      y: '100%',
-      stagger: 0.1
+      y: '120%',
+      stagger: {
+        grid: [this.elements.lines.length, this.elements.lines[0].length],
+        axis: 'y',
+        amount: 0.1
+      }
     })
 
     this.animateOut.to(this.elements.number, {
@@ -68,8 +67,12 @@ export default class Preloader extends Component {
     this.animateOut.to(this.element, {
       duration: 1.5,
       ease: 'expo.out',
-      scaleY: 0,
-      transformOrigin: '0 0'
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
+    })
+
+    this.animateOut.set(this.elements.body, {
+      height: 'auto',
+      overflow: 'auto'
     })
 
     this.animateOut.call(_ => this.emit('completed'))
@@ -77,6 +80,5 @@ export default class Preloader extends Component {
 
   destroy () {
     this.element.remove()
-    console.log('destroyed')
   }
 }

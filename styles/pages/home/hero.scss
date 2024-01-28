@@ -11,11 +11,16 @@
   width: 100%;
   height: 100%;
   position: absolute;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .home__hero__background__img {
-  @extend %cover;
   object-fit: cover;
+  transform-origin: 'center';
+  scale: 1.2
 }
 
 .home__hero__wrapper {

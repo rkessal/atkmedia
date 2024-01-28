@@ -10,16 +10,13 @@
 @import 'shared/paragraphs';
 @import 'shared/titles';
 @import 'shared/ctas';
+@import 'shared/links';
 
 @import 'layouts/footer';
 @import 'layouts/navigation';
 @import 'layouts/preloader';
 
 
-@import 'pages/home/home';
-@import 'pages/home/hero';
-@import 'pages/home/quote';
-@import 'pages/home/section_default';
-@import 'pages/home/section_horizontal';
-@import 'pages/home/section_vertical';
+@import 'pages/home';
+@import 'pages/privacy';
 

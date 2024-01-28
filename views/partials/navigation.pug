@@ -10,15 +10,22 @@ nav.navigation
         rect(x="0.875" y="14.9845" width="3.75" height="28.125" transform="rotate(-90 0.875 14.9845)" fill="white")
         rect(x="29" y="21.8595" width="3.75" height="28.125" transform="rotate(90 29 21.8595)" fill="white")
 
-      .navigation__menu
-        .navigation__menu__wrapper
-          span.navigation__menu__copyright=navigation.data.copyright
-          each link in navigation.data.body
-            if link.slice_type == 'navigation_link'
-              ul.navigation__list__internal
-                each item in link.items
-                  li.navigation__list__internal__item(href='item.link')=item.label
-            if link.slice_type == 'external_link'
-              ul.navigation__list__external
-                each item in link.items
-                  li.navigation__list__external__item(href='item.link')=item.label
+    .navigation__menu
+      .navigation__menu__wrapper
+        .navigation__menu__close__icon
+          svg(width="78" height="78" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg")
+            rect(x="16.9705" y="21.9203" width="7" height="55" transform="rotate(-45 16.9705 21.9203)" fill="white")
+            rect(x="21.9204" y="60.8112" width="7" height="55" transform="rotate(-135 21.9204 60.8112)" fill="white")
+
+        span.navigation__menu__copyright=navigation.data.copyright
+        each link in navigation.data.body
+          if link.slice_type == 'navigation_link'
+            ul.navigation__list__internal
+              each item in link.items
+                li.navigation__list__internal__item
+                  a(href=item.link data-router)=item.label
+          if link.slice_type == 'external_link'
+            ul.navigation__list__external
+              each item in link.items
+                li.navigation__list__external__item
+                  a(href=item.link)=item.label

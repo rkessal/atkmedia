@@ -2,9 +2,11 @@ const express = require('express')
 const path = require('path')
 const { app, port } = require('./config/express')
 const { homeHandler, cdcHandler, privacidadeHandler } = require('./server/handlers')
+const { middleware } = require('./server/middleware')
 
 app.use(express.static(path.join(__dirname, 'views')))
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(middleware)
 
 app.get('/', homeHandler)
 app.get('/cdc', cdcHandler)
