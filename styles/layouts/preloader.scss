@@ -7,10 +7,6 @@
   background-color: $color-parchment;
   color: black;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-
-  @include media('<=phone') {
-    height: 70rem;
-  }
 }
 
 .preloader__text {

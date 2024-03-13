@@ -11,6 +11,10 @@
   flex-direction: column;
   justify-content: start;
   align-items: center;
+
+  @include media('<=phone') {
+    top: 30%;
+  }
 }
 
 .home__section__process__star {
@@ -37,16 +41,16 @@
       }
     }
 
-    }
+  }
 
-    .home__section__process__star {
-      top: calc(7.875rem / 2);
-      left: calc(7.875rem / 2);
-      transform: translate(-50%, -50%);
-      position: absolute;
-      z-index: 11;
+  .home__section__process__star {
+    top: calc(7.875rem / 2);
+    left: calc(7.875rem / 2);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 11;
 
-    }
+  }
 }
 
 .home__section__process__circle__wrapper {
@@ -85,7 +89,7 @@
   position: absolute;
   top: 0%;
   left: 0%;
-  
+
   img {
     height: 100%;
   }
@@ -105,14 +109,15 @@
   text-align: center;
   color: $color-black;
   width: 16rem;
+
+  @include media('<=phone') {
+    height: calc(31.6875rem + 7.875rem * 2.2);
+  }
 }
 
-.home__section__process__title {
+.home__section__process__title {}
 
-}
-
-.home__section__process__number {
-}
+.home__section__process__number {}
 
 .home__section__process__content {
   @extend %paragraph-1;

@@ -12,7 +12,6 @@
   width: 100%;
   border-top: 0.25rem solid $color-parchment;
   padding-block: 0.75rem;
-  margin-inline: 2rem;
 }
 
 .footer__ad {
@@ -103,7 +102,11 @@
   }
 }
 
-.footer__column__links__item__link {}
+.footer__column__links__item__link {
+  @include media('<=phone') {
+    font-size: 1.8rem;
+  }
+}
 
 .footer__bottom__links {
   display: flex;

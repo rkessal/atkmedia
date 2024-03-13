@@ -4,6 +4,11 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1.5625em;
+
+  @include media('<=phone') {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  }
 }
 
 %paragraph-11 {
@@ -12,6 +17,11 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1.9375rem;
+
+  @include media('<=phone') {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
 }
 
 %paragraph-11-bold {
@@ -28,6 +38,11 @@
   font-size: 1.25rem;
   font-style: italic;
   font-weight: 400;
+
+  @include media('<=phone') {
+    font-size: 2.1rem;
+  }
+
 }
 
 

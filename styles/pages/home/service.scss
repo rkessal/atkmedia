@@ -87,8 +87,6 @@
 
   @include media('<=phone') {
     width: 100%;
-    padding-inline: 2rem;
-    margin-inline: 0rem;
     margin-block: 4rem;
     max-width: 100%;
   }
@@ -107,5 +105,9 @@
 
   ul {
     @extend %paragraph-12;
+  }
+
+  @include media('<=phone') {
+    max-width: 100%;
   }
 }

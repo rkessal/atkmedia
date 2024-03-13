@@ -14,6 +14,7 @@ export default class Page {
     this.selector = element
     this.selectorChildren = {
       ...elements,
+      body: document.querySelector('body'),
       animationsTitles: '[data-animation="title"]',
       animationsParagraphs: '[data-animation="paragraph"]',
       animationsQuotes: '[data-animation-scroll="quotes"]',
@@ -41,6 +42,8 @@ export default class Page {
         }
       }
     })
+
+    this.isPhone = this.elements.body.hasAttribute('data-phone')
 
     this.createAnimations()
   }
