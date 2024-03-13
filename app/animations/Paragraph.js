@@ -21,9 +21,6 @@ export default class Paragraph extends Animation {
   }
 
   animateOut () {
-    // gsap.set(this.element, {
-    //   autoAlpha: 0
-    // }, 0)
   }
 
   onResize () {
