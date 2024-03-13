@@ -1,8 +1,9 @@
 .footer {
   margin-top: 16rem;
-  padding-top: 4rem;
   background-color: $color-black;
   color: $color-parchment;
+  border-top: 0.25rem solid $color-parchment;
+  padding-block: 0.75rem;
 }
 
 .footer__wrapper {
@@ -10,8 +11,7 @@
   flex-direction: column;
   color: $color-parchment;
   width: 100%;
-  border-top: 0.25rem solid $color-parchment;
-  padding-block: 0.75rem;
+  padding-inline: 2rem;
 }
 
 .footer__ad {
