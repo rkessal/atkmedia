@@ -18,6 +18,12 @@
   width: 100%;
 }
 
+.navigation__time {
+  @include media('<=phone') {
+    font-size: 1.8rem;
+  }
+}
+
 .navigation__logo__wrapper {
   position: absolute;
   left: 50%;
@@ -28,6 +34,12 @@
 .navigation__logo {
   width: 2.3125rem;
   height: 1.3125rem;
+
+  @include media('<=phone') {
+    width: 4.5125rem;
+    height: 4.5125rem;
+  }
+
 }
 
 .navigation__logo__img {
@@ -46,9 +58,9 @@
 }
 
 .navigation__menu__icon {
-  svg {
-    width: 1.75781rem;
-    height: 1.5625rem;
+
+  @include media('<=phone') {
+    font-size: 1.8rem;
   }
 
   &:hover {
@@ -63,9 +75,8 @@
   margin-top: 2rem;
   margin-right: 2rem;
 
-  svg {
-    width: 3.4375rem;
-    height: 3.4375rem;
+  @include media('<=phone') {
+    font-size: 1.8rem;
   }
 
   &:hover {

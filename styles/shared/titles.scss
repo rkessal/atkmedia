@@ -7,6 +7,12 @@
   font-family: $font-freight;
   font-size: 1.125rem;
   font-style: italic;
+
+  @include media('<=phone') {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
 }
 
 %title-15 {
@@ -34,7 +40,7 @@
   line-height: 1;
 
   @include media('<=phone') {
-    font-size: 2rem;
+    // font-size: 2rem;
   }
 }
 

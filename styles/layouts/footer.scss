@@ -102,7 +102,11 @@
   }
 }
 
-.footer__column__links__item__link {}
+.footer__column__links__item__link {
+  @include media('<=phone') {
+    font-size: 1.8rem;
+  }
+}
 
 .footer__bottom__links {
   display: flex;

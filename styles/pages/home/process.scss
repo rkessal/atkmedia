@@ -109,6 +109,10 @@
   text-align: center;
   color: $color-black;
   width: 16rem;
+
+  @include media('<=phone') {
+    height: calc(31.6875rem + 7.875rem * 2.2);
+  }
 }
 
 .home__section__process__title {}
