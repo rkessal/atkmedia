@@ -11,7 +11,6 @@ export default class SectionServiceItem extends Animation {
       params
     })
     this.itemNumber = this.element.dataset.serviceItemNumber
-    console.log(this.elements)
   }
 
   animateIn (entry) {

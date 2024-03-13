@@ -33,7 +33,14 @@ export default class Home extends Page {
   createAnimations () {
     super.createAnimations()
 
-    const animationsSectionSeparators = map(this.elements.sectionSeparator, element => new SectionSeparator({ element }))
+    console.log(this.isPhone)
+    const animationsSectionSeparators = map(this.elements.sectionSeparator, element => new SectionSeparator({
+      element,
+      params: {
+        rootMargin: `999% 0px ${this.isPhone ? '-20%' : '10%'}`
+      },
+      isPhone: this.isPhone
+    }))
     this.animations.push(...animationsSectionSeparators)
 
     const animationsSectionHeaders = map(this.elements.sectionHeader, element => new SectionHeader({ element }))

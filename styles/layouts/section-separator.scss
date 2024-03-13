@@ -2,6 +2,7 @@
   padding-top: 8rem;
   margin-bottom: -2rem;
   pointer-events: none;
+  overflow-x: clip;
 
   &[data-section-separator-variant="white"] {
     background-color: $color-black;
@@ -12,6 +13,7 @@
   }
 
   .section__separator__image {
+
     img {
       height: 100%;
       width: 100%;

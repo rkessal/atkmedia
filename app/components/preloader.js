@@ -70,11 +70,6 @@ export default class Preloader extends Component {
       clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
     })
 
-    this.animateOut.set(this.elements.body, {
-      height: 'auto',
-      overflow: 'auto'
-    })
-
     this.animateOut.call(_ => this.emit('completed'))
   }
 

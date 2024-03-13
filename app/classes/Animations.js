@@ -3,10 +3,11 @@ import Component from './Component'
 import { ScrollTrigger } from 'gsap/all'
 
 export default class Animation extends Component {
-  constructor ({ element, elements, isScrub, params }) {
+  constructor ({ element, elements, isScrub, params, isPhone }) {
     super({ element, elements })
     this.isScrub = isScrub
     this.params = params ?? {}
+    this.isPhone = isPhone
     this.createObserver()
     this.animateOut()
   }
@@ -21,6 +22,7 @@ export default class Animation extends Component {
   }
 
   createObserver () {
+    console.log(this.params.rootMargin, this)
     this.observer = new window.IntersectionObserver(entries => {
       each(entries, entry => {
         this.animateIn(entry)
