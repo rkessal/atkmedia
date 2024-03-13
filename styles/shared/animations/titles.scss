@@ -1,0 +1,17 @@
+[data-animation="title"] {
+  &.active {
+    span span {
+      animation-name: title-reveal;
+      transition: $ease-in-out;
+      animation-duration: 1.5s;
+      // transform: translateY();
+    }
+  }
+
+  @keyframes title-reveal {
+    from {
+      animation-delay: 200ms;
+      transform: translateY(100%) ; 
+    }
+  }
+}

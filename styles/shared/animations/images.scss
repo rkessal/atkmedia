@@ -1,0 +1,34 @@
+[data-animation="image-about"] {
+  overflow: hidden;
+  &.active {
+    animation-name: image-reveal;
+    animation-duration: 1.5s;
+    transition: $ease-in-out;
+
+    img {
+        scale: 1.1;
+        animation-name: image-scale;
+        animation-duration: 1.5s;
+        animation-delay: 1.5s;
+        animation-fill-mode: forwards;
+        transition: $ease-in-out;
+    }
+  }
+  
+
+
+  @keyframes image-reveal {
+    from {
+      clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);    
+    }
+    to {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+
+  @keyframes image-scale {
+    to {
+      scale: 1;
+    }
+  }
+}

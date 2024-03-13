@@ -1,26 +1,40 @@
 .home__quote {
   position: relative;
   height: 70rem;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 20rem;
+  padding-bottom: 8rem;
 
-  @include media('<=phone') {
-    height: auto;
+  &[data-quote-variant="white"] {
+    background-color: $color-black;
+
+    .home__quote__wrapper {
+      color: $color-parchment;
+    }
+  }
+
+  &[data-quote-variant="dark"] {
+    background-color: $color-parchment;
+
+    .home__quote__wrapper {
+      color: $color-black;
+    }
   }
 }
 
 .home__quote__wrapper {
-  @extend %title-41;
   max-width: 49.0625rem;
-  margin: 20rem auto;
-  padding-bottom: 10rem;
   position: sticky;
   top: 40%;
 
   @include media('<=phone') {
     max-width: 44.5rem;
-    height: 100%;
-    margin: 15rem auto;
+    margin: 2rem auto;
   }
 }
 
 .home__quote__text {
+  @extend %title-41;
 }

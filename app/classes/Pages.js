@@ -3,7 +3,6 @@ import { isArray, each, map } from 'lodash'
 import Title from '../animations/Title'
 import Paragraph from '../animations/Paragraph'
 import AsyncLoad from './AsyncLoad'
-import Footer from '../animations/Footer'
 
 export default class Page {
   constructor ({
@@ -55,14 +54,16 @@ export default class Page {
     this.animations.push(...animationsTitles)
 
     const animationsParagraphs = map(this.elements.animationsParagraphs, element => {
-      return new Paragraph({ element })
+      return new Paragraph({
+        element
+      })
     })
     this.animations.push(...animationsParagraphs)
 
     const preload = map(this.elements.preload, element => new AsyncLoad({ element }))
     this.animations.push(...preload)
 
-    this.animations.push(new Footer({ element: this.elements.footer }))
+    // this.animations.push(new Footer({ element: this.elements.footer }))
   }
 
   show () {

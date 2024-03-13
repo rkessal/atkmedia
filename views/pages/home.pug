@@ -6,63 +6,113 @@ block variables
 block content
   .home
     each section in document.data.body
-
       if section.slice_type == 'hero'
-        .home__hero#hero(data-animation="hero")
-          figure.home__hero__background
-            img.home__hero__background__img(alt=section.primary.background_img.alt, data-src=section.primary.background_img.url)
-          .home__hero__wrapper
-            h1.home__hero__quote=section.primary.quote
-            .home__hero__secondary
-              span.home__hero__secondary__quote=section.primary.secondary
-              .home__hero__secondary__icon
-                svg(width="38" height="63" viewBox="0 0 38 63" fill="none" xmlns="http://www.w3.org/2000/svg")
-                  rect(x="17" width="4" height="63" fill="white")
-                  path(d="M19 63C19 56.6667 15.4 43.2 1 40" stroke="white" stroke-width="4")
-                  path(d="M19 63C19 56.6667 22.6 43.2 37 40" stroke="white" stroke-width="4")
+        .home__hero
+          each item in section.items
+            if item.type == 'right'
+              .home__hero__line-right
+                .home__hero__star
+                  svg(id="OBJECTS" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.22 67.22")
+                    path(stroke-width="0px" d="M33.61,0l1.67,14.81c1.01,9.01,8.12,16.11,17.13,17.13l14.81,1.67-14.81,1.67c-9.01,1.01-16.11,8.12-17.13,17.13l-1.67,14.81-1.67-14.81c-1.01-9.01-8.12-16.11-17.13-17.13l-14.81-1.67,14.81-1.67c9.01-1.01,16.11-8.12,17.13-17.13l1.67-14.81")
+                .separator-line
+                .home__hero__line
+                  .home__hero__line__small=item.small_text
+                  .home__hero__line__big=item.big_text
+            else 
+              .home__hero__line-left
+                .home__hero__line
+                  .home__hero__line__small=item.small_text
+                  .home__hero__line__big=item.big_text
+                .separator-line
+                .home__hero__star
+                  svg(id="OBJECTS" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.22 67.22")
+                    path(stroke-width="0px" d="M33.61,0l1.67,14.81c1.01,9.01,8.12,16.11,17.13,17.13l14.81,1.67-14.81,1.67c-9.01,1.01-16.11,8.12-17.13,17.13l-1.67,14.81-1.67-14.81c-1.01-9.01-8.12-16.11-17.13-17.13l-14.81-1.67,14.81-1.67c9.01-1.01,16.11-8.12,17.13-17.13l1.67-14.81")
+          .home__hero__cta
+            .home__hero__cta__content!=(PrismicDOM.asHTML(section.primary.cta_text))
+            .home__hero__cta__link
+              a(href='#contato') FALE CONOSCO
+      if section.slice_type == 'section_header'
+        .home__section__header(data-animation="section_header" data-section-header-variant=section.primary.variant id=section.primary.id)
+          .home__section__header__wrapper 
+            .home__section__header__title(data-animation="title")=section.primary.title
+            .home__section__header__number(data-animation="title")=section.primary.number
+            .home__section__star
+              svg(id="OBJECTS" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.22 67.22")
+                path(stroke-width="0px" d="M33.61,0l1.67,14.81c1.01,9.01,8.12,16.11,17.13,17.13l14.81,1.67-14.81,1.67c-9.01,1.01-16.11,8.12-17.13,17.13l-1.67,14.81-1.67-14.81c-1.01-9.01-8.12-16.11-17.13-17.13l-14.81-1.67,14.81-1.67c9.01-1.01,16.11-8.12,17.13-17.13l1.67-14.81")
 
+      if section.slice_type == 'about'
+        .home__about
+          .home__about__wrapper
+            .home__about__content!=(PrismicDOM.asHTML(section.primary.content)).replace(/<p>/g, '<p data-animation="paragraph">')
+            figure.home__about__image(data-animation="image-about")
+              img(alt=section.primary.image.alt data-src=section.primary.image.url)
+      if section.slice_type == 'section_seperator'
+        .section__separator(data-section-separator-variant=section.primary.variant)
+          figure.section__separator__image
+            img(alt=section.primary.image.alt data-src=section.primary.image.url)
+      if section.slice_type == 'process'
+        .home__section__process
+          .home__section__process__wrapper
+            .home__section__process__circle
+              each number in [1, 2, 3]
+                .home__section__process__little__circle(data-little-circle-number=number)
+                  svg.home__section__process__star(data-star-number=number xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.22 67.22")
+                    path(d="M33.61,0l.49,21.57c.14,6.32,5.23,11.41,11.55,11.55l21.57.49-21.57.49c-6.32.14-11.41,5.23-11.55,11.55l-.49,21.57-.49-21.57c-.14-6.32-5.23-11.41-11.55-11.55l-21.57-.49,21.57-.49c6.32-.14,11.41-5.23,11.55-11.55l.49-21.57Z")
+                    path(d="M57.38,9.84l-14.9,15.6c-4.37,4.57-4.37,11.77,0,16.34l14.9,15.6-15.6-14.9c-4.57-4.37-11.77-4.37-16.34,0l-15.6,14.9,14.9-15.6c4.37-4.57,4.37-11.77,0-16.34l-14.9-15.6,15.6,14.9c4.57,4.37,11.77,4.37,16.34,0l15.6-14.9Z")
+                  svg(data-little-circle-number=number xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126 126")
+                    circle(fill="#edebc9" stroke="#000" stroke-width="0.25rem" cx="63" cy="63" r="61")
+
+
+              .home__section__process__items
+                each item, index in section.items
+                  .home__section__process__item(data-process-item-number=index + 1)
+                    figure.home__section__process__image
+                      img(alt=item.image.alt data-src=item.image.url)
+                    .home__section__process__info
+                      .home__section__process__number=item.number
+                      .home__section__process__title=item.title
+                    .home__section__process__content!=(PrismicDOM.asHTML(item.content)).replace(/<p>/g, '<p data-animation="paragraph">')
+      if section.slice_type == 'service'
+        .home__section__service
+          .home__section__service__wrapper
+            .home__section__circle__wrapper
+              .home__section__service__circle
+                svg(data-vertical-star-number="1" xmlns="http://www.w3.org/2000/svg", viewBox="0 0 55.56 99.5")
+                  path(fill="#edebc9" stroke-width="0px" d="M49.38,49.05c-10.89-1.23-19.35-10.04-20.13-20.97L27.78,0l-1.46,28.08c-.78,10.93-9.25,19.75-20.13,20.97l-6.18.7,6.18.7c10.89,1.23,19.35,10.04,20.13,20.97l1.46,28.08,1.46-28.08c.78-10.93,9.25-19.75,20.13-20.97l6.18-.7-6.18-.7Z")
+                svg(data-vertical-star-number="2" xmlns="http://www.w3.org/2000/svg", viewBox="0 0 55.56 99.5")
+                  path(fill="#edebc9" stroke-width="0px" d="M49.38,49.05c-10.89-1.23-19.35-10.04-20.13-20.97L27.78,0l-1.46,28.08c-.78,10.93-9.25,19.75-20.13,20.97l-6.18.7,6.18.7c10.89,1.23,19.35,10.04,20.13,20.97l1.46,28.08,1.46-28.08c.78-10.93,9.25-19.75,20.13-20.97l6.18-.7-6.18-.7Z")
+
+                svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 643 766")
+                  path(fill="#edebc9" stroke-width="0px" d="M4,321.5C4,146.15,146.15,4,321.5,4V0C143.94,0,0,143.94,0,321.5v123h4v-123Z")
+                  path(fill="#edebc9" stroke-width="0px" d="M639,321.5v123c0,175.35-142.15,317.5-317.5,317.5v4c177.56,0,321.5-143.94,321.5-321.5v-123h-4Z")
+                .home__section__service__images
+                  each item, index in section.items
+                    figure.home__section__service__image(data-service-image-number=index)
+                      img(alt=item.image.alt data-src=item.image.url)
+
+
+            each item, index in section.items
+              .home__section__service__item(data-service-item-number=index)
+                .home__section__service__info
+                  .home__section__service__title(data-animation="title")=item.title
+                  .home__section__service__content!=(PrismicDOM.asHTML(item.content)).replace(/<p>/g, '<p data-animation="paragraph">')
       if section.slice_type == 'quote'
-        .home__quote(data-animation-scroll="quote")
+        .home__quote(data-quote-variant=section.primary.variant)
           .home__quote__wrapper
             .home__quote__text=section.primary.quote
-
-      if section.slice_type == 'section_default'
-        .home__section__default#quem-somos(data-animation-scroll='section_default')
-          .home__section__default__wrapper
-            .home__section__default__left
-              span.home__section__default__left__number='0' + section.primary.number
-              .home__section__default__left__title(data-animation="title")!=section.primary.title.replace(/\n/g, '<br/>')
-            .home__section__default__right
-              .home__section__default__right__text!=(PrismicDOM.asHTML(section.primary.content)).replace(/<p>/g, '<p data-animation="paragraph">')
-
-      if section.slice_type == 'vertical'
-        .home__section__vertical#valores
-          .home__section__vertical__wrapper
-            .home__section__vertical__left
-              span.home__section__vertical__left__number='0' + section.primary.number
-              .home__section__vertical__left__title(data-animation="title")=section.primary.title
-            .home__section__vertical__right
-              each item in section.items
-                .home__section__vertical__right_item
-                  .home__section__vertical__right__title(data-animation="title")=item.vertical_title
-                  .home__section__vertical__right__content!=(PrismicDOM.asHTML(item.vertical_content)).replace(/<p>/g, '<p data-animation="paragraph">')
-
-      if section.slice_type == 'horizontal'
-        .home__section__horizontal#servicios(data-animation-scroll="section_horizontal")
-          .home__section__horizontal__wrapper
-            .home__section__horizontal__left
-              span.home__section__horizontal__left__number='0' + section.primary.number
-              .home__section__horizontal__left__title(data-animation="title")=section.primary.title
-              .home__section__horizontal__left__labels
-                each item in section.items
-                  .home__section__horizontal__left__labels__item(data-animation="horizontal_label")=item.horizontal_title
-            .home__section__horizontal__right
-              each item in section.items
-                .home__section__horizontal__right_item
-                  .home__section__horizontal__right__item__title(data-animation="title")=item.horizontal_title
-                  .home__section__horizontal__right__item__content!=(PrismicDOM.asHTML(item.horizontal_content)).replace(/<p>|<li>/g, '<p data-animation="paragraph">')
-
+          
       if section.slice_type == 'call_to_action'
-        .home__section__cta
-          .home__section__cta__wrapper
-            a.home_section__cta__link(data-animation="title" href=section.primary.link.url)=section.primary.label
+        .call_to_action(data-cta-variant=section.primary.variant)
+          .call_to_action__wrapper
+            .call_to_action__link
+              a(href=section.primary.link.url)=section.primary.label
+      if section.slice_type == 'contact'
+        .home__contact
+          .home__contact__wrapper
+            .home__contact__star
+              svg(id="OBJECTS", xmlns="http://www.w3.org/2000/svg", viewBox="0 0 67.22 67.22")
+                path(fill="#edebc9" stroke-width="0px" d="M33.61,0l2.07,7.21c3.37,11.77,12.57,20.96,24.33,24.33l7.21,2.07-7.21,2.07c-11.77,3.37-20.96,12.57-24.33,24.33l-2.07,7.21-2.07-7.21c-3.37-11.77-12.57-20.96-24.33-24.33l-7.21-2.07,7.21-2.07c11.77-3.37,20.96-12.57,24.33-24.33l2.07-7.21")
+            .home__contact__email=section.primary.email
+            .home__contact__star
+              svg(id="OBJECTS", xmlns="http://www.w3.org/2000/svg", viewBox="0 0 67.22 67.22")
+                path(fill="#edebc9" stroke-width="0px" d="M33.61,0l2.07,7.21c3.37,11.77,12.57,20.96,24.33,24.33l7.21,2.07-7.21,2.07c-11.77,3.37-20.96,12.57-24.33,24.33l-2.07,7.21-2.07-7.21c-3.37-11.77-12.57-20.96-24.33-24.33l-7.21-2.07,7.21-2.07c11.77-3.37,20.96-12.57,24.33-24.33l2.07-7.21")

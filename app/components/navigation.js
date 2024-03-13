@@ -12,7 +12,8 @@ export default class Navigation extends Component {
         menu: '.navigation__menu',
         wrapper: '.navigation__wrapper',
         links: '.navigation__menu a',
-        copyright: '.navigation__menu__copyright'
+        copyright: '.navigation__menu__copyright',
+        currentTime: '.navigation__time'
       },
       noScroll: false
     })
@@ -20,10 +21,20 @@ export default class Navigation extends Component {
   }
 
   build () {
+    this.setCurrentTime()
     this.visible = false
     this.isAnimating = false
     this.addEventListeners()
     this.elements.menu.remove()
+  }
+
+  setCurrentTime () {
+    setInterval(() => {
+      const now = new Date()
+      const hours = (now.getUTCHours() - 3).toString().padStart(2, '0')
+      const minutes = now.getUTCMinutes().toString().padStart(2, '0')
+      this.elements.currentTime.innerHTML = `${hours}:${minutes} GMT-3 Brasilia`
+    }, 5000)
   }
 
   async toggleMenu () {

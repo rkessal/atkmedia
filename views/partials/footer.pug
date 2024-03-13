@@ -1,23 +1,22 @@
-footer.footer(data-animation="footer")
-  figure.footer__background
-    img.footer__background__img(data-src=footer.data.background_image.url alt=footer.data.background_image.alt)
+footer.footer
   .footer__wrapper
-    .footer__top
-      figure.footer__logo
-        img.footer__logo__img(alt=footer.data.logo.alt data-src=footer.data.logo.url)
+    .footer__main
       each section in footer.data.body
+        if section.slice_type == 'ad'
+          .footer__ad
+            .footer__ad__wrapper
+              .footer__ad__content!=PrismicDOM.asHTML(section.primary.content)
+              .footer__ad__link
+                a(href=section.primary.link.url)=section.primary.label
         if section.slice_type == 'column_link'
           ul.footer__column__links
             each item in section.items
               li.footer__column__links__item
-                a.footer__column__links__item__link(href=item.link.url)=item.label
-
-    .footer__bottom
-      each section in footer.data.body
-        if section.slice_type == 'bottom_link'
-          ul.footer__bottom__links
-            each item in section.items
-              li.footer__bottom__links__item
-                a.footer__bottom__links__item__link(data-router href=item.link.url)=item.label
-        if section.slice_type == 'copyright'
-          .footer__bottom__copyright=section.primary.copyright
+                if item.link.target != ''
+                  a.footer__column__links__item__link(target=item.link.target href=item.link.url)=item.label
+                else
+                  a.footer__column__links__item__link(href=item.link.url data-router)=item.label
+    .footer__identity
+      figure.footer__identity__logo
+        img.footer__identity__logo__img(alt=footer.data.logo.alt data-src=footer.data.logo.url)
+      .footer__identity__copyright=footer.data.copyrights

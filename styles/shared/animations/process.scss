@@ -1,0 +1,103 @@
+[data-process-item-number] {
+    .home__section__process__content {
+      transition: $ease-in-out;
+      transition-duration: 1s;
+      opacity: 0;
+    }
+
+    .home__section__process__image {
+        transition-delay: 0.5s;
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%); 
+
+        img {
+          transition-delay: 0.5s;
+          scale: 1.2;
+          z-index: 0;
+        }
+    }
+
+  
+  &.active {
+    .home__section__process__content {
+      transition: $ease-in-out;
+      transition-duration: 1s;
+      opacity: 1;
+    }
+
+    .home__section__process__image {
+        opacity: 1;
+        transition: $ease-in-out;
+        transition-duration: 0.5s;
+        clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+
+        img {
+          scale: 1;
+          transition-delay: 0.5s;
+          transition-duration: 1.5s;
+          transition: $ease-in-out;
+          z-index: 10;
+        }
+    }
+
+    @keyframes process-image-reveal {
+      0% {
+        opacity: 1;
+      }
+      1%{
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+      }
+      100% {
+        clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+      }
+    }
+  }
+}
+
+[data-little-circle-number] {
+  .home__section__process__star {
+    opacity: 0;
+  }
+
+  &.active {
+    .home__section__process__star {
+      animation-name: star-reveal;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      transition: $ease-in-out;
+    }
+  }
+
+  @keyframes star-reveal {
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.home__section__process__item {
+  $angle: 120;
+
+  @for $i from 1 through 3 {
+    &[data-process-item-number="#{$i}"] {
+      .home__section__process__info {
+        $translateX: calc(50% - 16rem / 2);
+        transform: translate(-50%, -50%) rotate(var(--ratio-#{$i})) translateX(#{$translateX});
+        transition: $ease-in-out;
+      }
+    }
+  }
+}
+
+.home__section__process__little__circle {
+
+  $angle: 120;
+
+  @for $i from 1 through 3 {
+    &[data-little-circle-number="#{$i}"] {
+      $translateX: calc(50% - (7.875rem / 2));
+      transform: translate(-50%, -50%) rotate(var(--ratio-#{$i})) translateX(#{$translateX});
+      transition: $ease-in-out;
+    }
+
+    }
+  }

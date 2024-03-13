@@ -1,0 +1,21 @@
+.section__separator {
+  padding-top: 8rem;
+  margin-bottom: -2rem;
+  pointer-events: none;
+
+  &[data-section-separator-variant="white"] {
+    background-color: $color-black;
+  }
+
+  &[data-section-separator-variant="dark"] {
+    background-color: $color-parchment;
+  }
+
+  .section__separator__image {
+    img {
+      height: 100%;
+      width: 100%;
+      transform-origin: 50% 65%;
+    }
+  }
+}

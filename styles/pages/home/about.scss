@@ -1,0 +1,35 @@
+.home__about {
+  margin-inline: 2rem;
+  margin-top: 6.75rem;
+}
+
+.home__about__wrapper {
+  display: flex;
+  flex-direction: row;
+
+  @include media('<=phone') {
+    flex-direction: column;
+  }
+}
+
+.home__about__content {
+  @extend %paragraph-11;
+  margin-top: 4.75rem;
+  max-width: 42.8125rem;
+  width: 100%;
+  padding-right: 11.3125rem;
+
+  @include media('<=phone') {
+    width: 100%;
+    margin-bottom: 6rem;
+    padding-right: 0;
+  }
+
+}
+
+.home__about__image {
+  img {
+    width: 42.1875rem;
+    height: 39.125rem;
+  }
+}

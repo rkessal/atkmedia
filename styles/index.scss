@@ -11,12 +11,17 @@
 @import 'shared/titles';
 @import 'shared/ctas';
 @import 'shared/links';
+@import 'shared/buttons';
 
 @import 'layouts/footer';
 @import 'layouts/navigation';
+@import 'layouts/section-header';
+@import 'layouts/section-separator';
 @import 'layouts/preloader';
+@import 'layouts/whatsapp';
 
 
 @import 'pages/home';
 @import 'pages/privacy';
 
+@import 'shared/animations';

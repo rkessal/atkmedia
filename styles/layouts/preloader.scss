@@ -1,10 +1,11 @@
-.preloader  {
+.preloader {
   @extend %center;
   position: fixed;
   height: 100vh;
   width: 100%;
   z-index: 20;
-  background-color: $color-cornflower-blue;
+  background-color: $color-parchment;
+  color: black;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
   @include media('<=phone') {

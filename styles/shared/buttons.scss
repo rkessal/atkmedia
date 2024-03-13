@@ -1,0 +1,9 @@
+%button-filled {
+  @extend %title-11;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  background-color: $color-parchment;
+  padding: 1.3rem 2.375rem;
+  color: inherit;
+  border-radius: 99rem;
+}

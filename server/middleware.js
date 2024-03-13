@@ -6,6 +6,7 @@ async function middleware (req, res, next) {
   const meta = await client.getSingle('meta')
   const navigation = await client.getSingle('navigation')
   const footer = await client.getSingle('footer')
+  const whatsapp = await client.getSingle('whatsapp')
 
   res.locals = {
     ...res.locals,
@@ -13,6 +14,7 @@ async function middleware (req, res, next) {
     meta,
     navigation,
     footer,
+    whatsapp,
     PrismicDOM
   }
 

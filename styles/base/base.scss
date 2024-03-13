@@ -1,13 +1,15 @@
 html {
-  font-size: calc(100vw / 1400 * 16);
+  font-size: calc((100vw / 1440) * 16);
 
   @include media('<=phone') {
     font-size: calc(100vw / 768 * 16);
   }
 }
+
 body {
-  @extend %paragraph-11;
-  background-color: $color-cornflower-blue;
+  font-family: $font-forma-djr;
+  background-color: $color-black;
+  color: $color-parchment;
   position: relative;
 }
 
@@ -17,10 +19,24 @@ a {
   outline: none;
 }
 
+.separator-line {
+  background-color: $color-parchment;
+  height: 0.25rem;
+  width: 100%;
+  margin-bottom: 5.45rem;
+  margin-inline: 1rem;
+
+  @include media('<=phone') {
+    margin-bottom: 2.75rem;
+  }
+}
+
 [data-animation="horizontal_label"],
 [data-animation="title"],
 [data-animation="paragraph"] {
-  p span, span {
+
+  p span,
+  span {
     display: inline-block;
     overflow: hidden;
 
@@ -30,4 +46,15 @@ a {
     padding-top: 0.4ch;
     margin-top: -0.7ch;
   }
+}
+
+.grow {
+  img {
+    transition: $ease-in-out;
+    transform: scale(calc(var(--grow-ratio)));
+  }
+}
+
+.hide {
+  opacity: 0;
 }
