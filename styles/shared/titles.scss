@@ -1,3 +1,21 @@
+%title-11 {
+  @extend %paragraph-11;
+  line-height: 1;
+}
+
+%title-11--italic {
+  font-family: $font-freight;
+  font-size: 1.125rem;
+  font-style: italic;
+}
+
+%title-15 {
+  font-weight: 900;
+  font-size: 1.5rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
 %title-20 {
   -webkit-text-stroke-width: 1;
   -webkit-text-stroke-color: $color-port-gore;
@@ -9,6 +27,28 @@
   line-height: 3.6875rem;
 }
 
+%title-35 {
+  font-family: $font-forma-djr;
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+%title-130 {
+  font-family: $font-forma-djr;
+  font-weight: 900;
+  font-size: 13.0625rem;
+  line-height: 1;
+  margin-top: -2.8rem;
+
+  @include media('<=phone') {
+    font-size: 7.0625rem;
+    margin-top: -1.2rem;
+  }
+
+
+}
+
 
 %title-23 {
   font-family: $font-forma-djr;
@@ -18,18 +58,10 @@
   line-height: 3.6875rem;
 }
 
-%title-35 {
-  font-family: $font-freight;
-  font-size: 3.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 3.6875rem;
-}
-
 %title-41 {
   font-family: $font-freight;
   font-size: 4.125rem;
-  font-style: normal;
+  font-style: italic;
   font-weight: 400;
   text-align: center;
   line-height: 3.6875rem;

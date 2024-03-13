@@ -1,0 +1,38 @@
+.call_to_action {
+  padding-bottom: 4rem;
+  &[data-cta-variant="white"] {
+    background-color: $color-black;
+    color: $color-black;
+
+    .call_to_action__link {
+      a {
+        background-color: $color-parchment;
+      }
+    }
+  }
+
+  &[data-cta-variant="dark"] {
+    background-color: $color-parchment;
+    color: $color-parchment;
+
+    .call_to_action__link {
+      a {
+        background-color: $color-black;
+      }
+    }
+  }
+}
+
+.call_to_action__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.call_to_action__link {
+  display: flex;
+
+  a {
+    @extend %button-filled;
+  }
+}

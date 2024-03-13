@@ -2,6 +2,7 @@ const { client } = require('../config/prismic')
 
 async function homeHandler (req, res) {
   const document = await client.getSingle('home')
+  console.dir(res.locals.whatsapp, { depth: null })
   res.render('pages/home', {
     document
   })

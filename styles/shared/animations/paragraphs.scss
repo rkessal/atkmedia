@@ -1,0 +1,24 @@
+[data-animation="paragraph"] {
+  span {
+    opacity: 0;
+
+    &.active {
+      animation-name: line-reveal;
+      animation-duration: 1.5s;
+      animation-fill-mode: forwards;
+      transition: $ease-in-out;
+    }
+
+  }
+
+
+  @keyframes line-reveal {
+    from {
+      transform: translateY(100%); 
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}

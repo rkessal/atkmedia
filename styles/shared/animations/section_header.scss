@@ -1,0 +1,74 @@
+[data-animation="section_header"] {
+  &.animate {
+    animation-name: section-header-reveal;
+    transition: $ease-in-out;
+    animation-duration: 2s;
+
+    .home__section__header__title {
+      span span {
+        animation-name: title-reveal;
+        transition: $ease-in-out;
+        animation-duration: 1.5s;
+      }
+    
+      @keyframes title-reveal {
+        0% {
+          transform: translateY(100%) ; 
+        }
+        50% {
+          transform: translateY(100%) ; 
+        }
+      }
+    }
+
+    .home__section__header__number {
+      span span {
+        animation-name: number-reveal;
+        transition: $ease-in-out;
+        animation-duration: 1.5s;
+      }
+    
+      @keyframes number-reveal {
+        0% {
+          transform: translateY(100%) ; 
+        }
+        70% {
+          transform: translateY(100%) ; 
+        }
+      }
+    }
+
+    .home__section__star {
+      svg {
+        animation-name: star-reveal;
+        transition: $ease-in-out;
+        animation-duration: 1.9s;
+      }
+    
+      @keyframes star-reveal {
+        0% {
+          transform: rotate(20deg) ; 
+          opacity: 0;
+        }
+        95% {
+          transform: rotate(20deg) ; 
+          opacity: 0;
+          scale: 0.6;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+    }
+  }
+  @keyframes section-header-reveal {
+    from {
+      clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+    to {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+  }
+}

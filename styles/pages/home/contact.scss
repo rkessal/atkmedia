@@ -1,0 +1,25 @@
+.home__contact {
+  background-color: $color-black;
+}
+
+.home__contact__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-block: 16rem;
+}
+
+.home__contact__star {
+  margin-top: 0.65rem;
+  svg {
+    width: 2.4375rem;
+    height: 2.4375rem;
+  }
+}
+
+.home__contact__email {
+  @extend %title-35;
+  margin-inline: 1.5rem;
+  text-transform: uppercase;
+}

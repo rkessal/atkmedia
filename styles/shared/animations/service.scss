@@ -1,0 +1,4 @@
+.home__section__service__images {
+  transform: translateY(calc(-100% / 3 * var(--current-image)));
+  transition: transform 1.5s $ease-in-out;
+}

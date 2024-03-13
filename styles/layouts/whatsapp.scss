@@ -1,0 +1,20 @@
+.whatsapp {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 18;
+}
+
+.whatsapp__link {
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 0.5rem;
+  background: $color-parchment;
+  border-radius: 100%;
+}
+
+.whatsapp__image {
+  height: 2rem;
+  width: 2rem;
+}
