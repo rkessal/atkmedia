@@ -39,6 +39,11 @@
       &[data-little-circle-number] {
         height: 7.875rem;
       }
+
+      circle {
+        fill: $color-parchment;
+        stroke: $color-black;
+      }
     }
 
   }
@@ -50,6 +55,10 @@
     position: absolute;
     z-index: 11;
 
+    path {
+      fill: $color-black;
+      stroke: $color-black;
+    }
   }
 }
 
@@ -127,5 +136,5 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
-  color: $color-parchment;
+  color: $color-black;
 }
