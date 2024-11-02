@@ -37,6 +37,10 @@
     height: 47.875rem;
     z-index: 99;
 
+    path {
+      fill: $color-parchment;
+    }
+
     &[data-vertical-star-number] {
       position: absolute;
       width: 1.625rem;

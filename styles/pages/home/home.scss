@@ -1,16 +1,12 @@
-.home {
-}
+.home {}
 
 .home__section__cta {
   @extend %center;
 }
 
-.home__section__cta__wrapper {
-
-}
+.home__section__cta__wrapper {}
 
 .home_section__cta__link {
   @extend %title-36;
   @extend %link;
-  color: $color-port-gore;
 }
