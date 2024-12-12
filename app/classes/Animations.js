@@ -22,7 +22,6 @@ export default class Animation extends Component {
   }
 
   createObserver () {
-    console.log(this.params.rootMargin, this)
     this.observer = new window.IntersectionObserver(entries => {
       each(entries, entry => {
         this.animateIn(entry)
